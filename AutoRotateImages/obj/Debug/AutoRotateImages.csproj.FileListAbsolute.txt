@@ -1,0 +1,8 @@
+C:\Users\McTabor\AppData\Local\Temporary Projects\AutoRotateImages\bin\Debug\AutoRotateImages.exe.config
+C:\Users\McTabor\Documents\Visual Studio 2013\Projects\AutoRotateImages\AutoRotateImages\bin\Debug\AutoRotateImages.exe.config
+C:\Users\McTabor\Documents\Visual Studio 2013\Projects\AutoRotateImages\AutoRotateImages\bin\Debug\AutoRotateImages.exe
+C:\Users\McTabor\Documents\Visual Studio 2013\Projects\AutoRotateImages\AutoRotateImages\bin\Debug\AutoRotateImages.pdb
+C:\Users\McTabor\Documents\Visual Studio 2013\Projects\AutoRotateImages\AutoRotateImages\bin\Debug\ExifLib.dll
+C:\Users\McTabor\Documents\Visual Studio 2013\Projects\AutoRotateImages\AutoRotateImages\obj\Debug\AutoRotateImages.csprojResolveAssemblyReference.cache
+C:\Users\McTabor\Documents\Visual Studio 2013\Projects\AutoRotateImages\AutoRotateImages\obj\Debug\AutoRotateImages.exe
+C:\Users\McTabor\Documents\Visual Studio 2013\Projects\AutoRotateImages\AutoRotateImages\obj\Debug\AutoRotateImages.pdb
