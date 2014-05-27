@@ -80,6 +80,7 @@ namespace AutoRotateImages
                 fs.Dispose();
             }
 
+            // TODO: Why can't I overwrite files above???
             files = Directory.GetFiles(path, "*-1.jpg");
             foreach (var f in files)
             {
