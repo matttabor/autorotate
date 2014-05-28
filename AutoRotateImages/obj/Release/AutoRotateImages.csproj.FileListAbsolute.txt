@@ -4,3 +4,4 @@ C:\Users\McTabor\Documents\GitHub\autorotate\AutoRotateImages\bin\Release\AutoRo
 C:\Users\McTabor\Documents\GitHub\autorotate\AutoRotateImages\bin\Release\ExifLib.dll
 C:\Users\McTabor\Documents\GitHub\autorotate\AutoRotateImages\obj\Release\AutoRotateImages.exe
 C:\Users\McTabor\Documents\GitHub\autorotate\AutoRotateImages\obj\Release\AutoRotateImages.pdb
+C:\Users\McTabor\Documents\GitHub\autorotate\AutoRotateImages\obj\Release\AutoRotateImages.csprojResolveAssemblyReference.cache
