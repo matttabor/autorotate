@@ -11,8 +11,8 @@ namespace AutoRotateImages
     {
         static void Main(string[] args)
         {
-            //string path = args[0];
-            string path = @"C:\Users\McTabor\Pictures\Emmett Samples";
+            string path = args[0];
+            //string path = @"C:\Users\McTabor\Pictures\Emmett Samples";
             var files = Directory.EnumerateFiles(path).Where(f => f.EndsWith(".jpg") || f.EndsWith(".jpeg") || f.EndsWith("JPG") || f.EndsWith("JPEG")).ToList();
             
             if (files.Count < 1)

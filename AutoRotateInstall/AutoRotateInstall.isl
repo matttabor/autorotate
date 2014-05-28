@@ -4427,7 +4427,7 @@ UwBpAG4AZwBsAGUASQBtAGEAZwBlAAEARQB4AHAAcgBlAHMAcwA=
 		<col def="s72">Component_</col>
 		<col def="I4">ISAttributes</col>
 		<row><td>Registry1</td><td>0</td><td>Directory\shell\Auto Rotate Images</td><td/><td/><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
-		<row><td>Registry2</td><td>0</td><td>Directory\shell\Auto Rotate Images\command</td><td/><td>[INSTALLDIR]AutoRotateImages.exe" "%1"</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
+		<row><td>Registry2</td><td>0</td><td>Directory\shell\Auto Rotate Images\command</td><td/><td>[INSTALLDIR]AutoRotateImages.exe "%1"</td><td>ISX_DEFAULTCOMPONENT1</td><td>0</td></row>
 	</table>
 
 	<table name="RemoveFile">
