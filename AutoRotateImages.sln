@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoRotateImages", "AutoRot
 EndProject
 Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "AutoRotateSetup", "AutoRotateSetup\AutoRotateSetup.isproj", "{8263FDA9-55D5-4DD4-A2ED-85C692E09CF0}"
 EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "AutoRotateInstall", "AutoRotateInstall\AutoRotateInstall.isproj", "{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		CD_ROM|Any CPU = CD_ROM|Any CPU
@@ -36,6 +38,16 @@ Global
 		{8263FDA9-55D5-4DD4-A2ED-85C692E09CF0}.Release|Any CPU.Build.0 = SingleImage
 		{8263FDA9-55D5-4DD4-A2ED-85C692E09CF0}.SingleImage|Any CPU.ActiveCfg = SingleImage
 		{8263FDA9-55D5-4DD4-A2ED-85C692E09CF0}.SingleImage|Any CPU.Build.0 = SingleImage
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.Debug|Any CPU.ActiveCfg = DVD-5
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.Debug|Any CPU.Build.0 = DVD-5
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.DVD-5|Any CPU.Build.0 = DVD-5
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.Release|Any CPU.ActiveCfg = SingleImage
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.Release|Any CPU.Build.0 = SingleImage
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{AD1FCA8F-FA57-4A30-B027-3C0223178CF6}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

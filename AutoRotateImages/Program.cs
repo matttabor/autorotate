@@ -10,10 +10,10 @@ namespace AutoRotateImages
     {
         static void Main(string[] args)
         {
-            string path = args[0];
-            //string path = @"C:\Users\McTabor\Pictures\Emmett Samples";
+            //string path = args[0];
+            string path = @"C:\Users\McTabor\Pictures\Emmett Samples";
             var files = Directory.EnumerateFiles(path).Where(f => f.EndsWith(".jpg") || f.EndsWith(".jpeg") || f.EndsWith("JPG") || f.EndsWith("JPEG")).ToList();
-
+            
             if (files.Count < 1)
             {
                 Console.WriteLine("No .jpg images found in {0}.\nPress enter to exit.", path);
@@ -23,78 +23,58 @@ namespace AutoRotateImages
 
             foreach (var item in files)
             {
-                //System.IO.FileStream fs = new System.IO.FileStream(item, System.IO.FileMode.Open);
                 FileStream fs = new FileStream(item, FileMode.Open);
                 Image img = Image.FromStream(fs);
                 PropertyItem pi = img.GetPropertyItem(274);
                 int orientation = pi.Value[0];
                 EncoderParameters encoderParameters = new EncoderParameters(1);
-                ImageFormat sourceFormat = img.RawFormat;
-                MemoryStream ms;
-                byte[] ni;
+                
+                bool edited = false;
+                
 
                 switch (orientation)
                 {
+                    case 1:
+                        continue;
+                    
                     case 6:
                         encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Transformation, (long)EncoderValue.TransformRotate90);
-
-                        // Set orientation to normal so if we run this again it doesn't rotate an already rotated image
-                        pi.Value[0] = 1;
-                        img.SetPropertyItem(pi);
-
-                        // Added new memorystream
-                        ms = new MemoryStream();
-
-                        // Read into memorystream
-                        img.Save(ms, GetEncoder(sourceFormat), encoderParameters);
-                        fs.Close();
-                        File.Delete(item);
-
-                        // Read from memorystream into byte array
-                        ni = ms.ToArray();
-
-                        // Save out using new filestream.
-                        using (FileStream nfs = new FileStream(item, FileMode.Create, FileAccess.ReadWrite))
-                        {
-                            nfs.Write(ni, 0, ni.Length);
-                        }
-
+                        edited = true;
                         break;
                     case 8:
-                        encoderParameters.Param[0] = new System.Drawing.Imaging.EncoderParameter(System.Drawing.Imaging.Encoder.Transformation, (long)System.Drawing.Imaging.EncoderValue.TransformRotate270);
-                        
-                        // Set orientation to normal so if we run this again it doesn't rotate an already rotated image
-                        pi.Value[0] = 1;
-                        img.SetPropertyItem(pi);
-                        
-                        // Added new memorystream
-                        ms = new MemoryStream();
-
-                        // Read into memorystream
-                        img.Save(ms, GetEncoder(sourceFormat), encoderParameters);
-                        fs.Close();
-                        File.Delete(item);
-
-                        // Read from memorystream into byte array
-                        ni = ms.ToArray();
-
-                        // Save out using new filestream.
-                        using (FileStream nfs = new FileStream(item, FileMode.Create, FileAccess.ReadWrite))
-                        {
-                            nfs.Write(ni, 0, ni.Length);
-                        }
+                        encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Transformation, (long)System.Drawing.Imaging.EncoderValue.TransformRotate270);
+                        edited = true;
                         break;
+                }
+
+                if (edited)
+                {
+                    // Set orientation to normal so if we run this again it doesn't rotate an already rotated image
+                    pi.Value[0] = 1;
+                    img.SetPropertyItem(pi);
+
+                    // Added new memorystream
+                    MemoryStream ms = new MemoryStream();
+
+                    // Read into memorystream
+                    img.Save(ms, GetEncoder(img.RawFormat), encoderParameters);
+                    fs.Close();
+                    File.Delete(item);
+
+                    // Read from memorystream into byte array
+                    byte[] ni = ms.ToArray();
+
+                    // Save out using new filestream.
+                    using (FileStream nfs = new FileStream(item, FileMode.Create, FileAccess.ReadWrite))
+                    {
+                        nfs.Write(ni, 0, ni.Length);
+                    }
                 }
 
 
             }
         }
-
-        public static void SaveJpeg(string path, Image img, EncoderParameters encoderParameters)
-        {
-            
-        }
-
+        
         public static ImageCodecInfo GetEncoder(ImageFormat format)
         {
             foreach (var info in ImageCodecInfo.GetImageEncoders())
